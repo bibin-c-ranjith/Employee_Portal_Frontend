@@ -1,0 +1,26 @@
+<div class="row w-100 d-flex-justify-content-center align-items-center" style="width: 100%;height: 86vh;">
+
+    <div class="col-md-1"></div>
+    <div class="col-md-5">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX9A5dXy1TroyyQPqIauBbN03gwOgXLjFNSjE-sKs8AyAWjmtnaWGI2L4SdcHdYbG1C20&usqp=CAU" alt="no img">
+    </div>
+    <div class="col-md-5">
+        <form (ngSubmit)="login()" #loginform ="ngForm"  class="border rounded shadow p-5" style="background-color: rgb(4, 120, 126);">
+            <h1 style="color: aliceblue;">Login</h1>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Enter Email" email required [(ngModel)] = "email" name="email" #useremail = "ngModel">
+                <span *ngIf="useremail.invalid && useremail.touched" class="text-danger">Invalid email</span>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Enter Password" required pattern="[a-zA-Z0-9.{4,}]*" [(ngModel)] = "password" name="password" #userpswd = "ngModel">
+                <span *ngIf="userpswd.invalid && userpswd.touched" class="text-danger">Invalid Password</span>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+        </form>
+    </div>
+    
+    <div class="col-md-1"></div>
+
+</div>
